@@ -1,26 +1,15 @@
-class ScrollRevealConfig {
-  constructor(options) {
-    this.options = options;
-    this.delay = options.delay;
-  }
-
-  reveal(selector) {
-    ScrollReveal().reveal(selector, { ...this.options, delay: this.delay });
-    this.delay += 100;
-  }
-}
-
-const scrollRevealConfig = new ScrollRevealConfig({
-  reset: true,
+ScrollReveal({
+  reset: false,
   distance: "200px",
   duration: 2500,
-  delay: 400,
+  delay: 0,
+});
+ScrollReveal().reveal(".name", { delay: 500, origin: "bottom" });
+ScrollReveal().reveal(".introduction", { delay: 600, origin: "bottom" });
+ScrollReveal().reveal(".social-media", { delay: 700, origin: "bottom" });
+ScrollReveal().reveal(".scroll-down", { delay: 800, origin: "bottom" });
+ScrollReveal().reveal(".container-about img", { delay: 100, origin: "bottom" });
+ScrollReveal().reveal(".container-about .text-container", {
+  delay: 200,
   origin: "bottom",
 });
-
-scrollRevealConfig.reveal(".name");
-scrollRevealConfig.reveal(".introduction");
-scrollRevealConfig.reveal(".social-media");
-scrollRevealConfig.reveal(".scroll-down");
-scrollRevealConfig.reveal(".container-about img");
-scrollRevealConfig.reveal(".container-about .text-container");

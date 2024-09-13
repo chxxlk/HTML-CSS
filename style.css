@@ -12,14 +12,17 @@
   margin: 0;
 }
 body {
-  background-image: url(/img/background.jpg);
-  background-size: cover;
   color: var(--text);
   font-family: var(--font-family);
+  background-image: url(/img/background.jpg);
+  background-size: auto;
+  background-repeat: no-repeat;
 }
-
+/* TODO: Smooth scroll here  */
+html {
+  scroll-behavior: smooth;
+}
 /*TODO: Header and .navbar */
-
 .navbar {
   background-color: transparent;
   backdrop-filter: blur(10px);
@@ -44,12 +47,11 @@ body {
     }
   }
 }
-
 /* TODO: HOME */
 .home {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: fit-content;
   width: 100vw;
   backdrop-filter: blur(10px);
   justify-content: center;
@@ -107,6 +109,7 @@ body {
     .scroll-down {
       position: relative;
       margin-top: 250px;
+      margin-bottom: 50px;
       width: fit-content;
       height: fit-content;
       .btn-scroll {
@@ -161,7 +164,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-
   .container-about {
     margin: 200px 0 200px 0;
     display: flex;
@@ -243,6 +245,43 @@ body {
         transform: rotate(0deg);
         opacity: 1;
       }
+    }
+  }
+}
+
+/* TODO: Project page here !!!  */
+.project {
+  background-color: var(--background);
+  font-family: var(--font-family);
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    color: var(--text);
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+  .project-container {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    gap: 20px;
+    /* margin-top: 20px; */
+    .project-1 {
+      width: 300px;
+      height: 300px;
+      background-color: var(--primary);
+      color: var(--text);
+      border-radius: 10px;
     }
   }
 }
